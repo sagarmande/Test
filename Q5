@@ -1,0 +1,34 @@
+class Stack:
+    def __init__(self):
+        self.stack = []  # Creating an empty list to represent the stack
+
+    def push(self, item):
+        self.stack.append(item)  # Adding an item to the top of the stack
+
+    def pop(self):
+        if not self.isEmpty():  # Checking if the stack is not empty
+            return self.stack.pop()  # Removing and returning the top item from the stack
+        else:
+            raise IndexError("Stack is empty. Cannot perform pop operation.")
+
+    def isEmpty(self):
+        return len(self.stack) == 0  # Checking if the stack is empty
+
+
+# Creating an instance of the Stack class
+stack = Stack()
+
+# Pushing elements onto the stack
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+# Popping elements from the stack
+print(stack.pop())  # Output: 3
+print(stack.pop())  # Output: 2
+
+# Checking if the stack is empty
+print(stack.isEmpty())  # Output: False
+
+print(stack.pop())  # Output: 1
+print(stack.isEmpty())  # Output: True
